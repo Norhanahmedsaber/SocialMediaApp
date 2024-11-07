@@ -1,50 +1,134 @@
-# Welcome to your Expo app 👋
+# SocialMedia App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+SocialMedia is a simple React Native app built with Expo that allows users to share their thoughts through posts.
 
-## Get started
+## The app has the following features:
 
-1. Install dependencies
+- User authentication (login, signup)
+- Post creation and display
+- Input validation
+- API integration with JSONPlaceholder for post management
+- Context API for global state management
 
-   ```bash
-   npm install
-   ```
+This README will guide you through the steps of setting up, running, and understanding the app, as well as provide details on the architecture.
 
-2. Start the app
+## Table of Contents
 
-   ```bash
-    npx expo start
-   ```
+- Prerequisites
+- Installation
+- Project Structure
+- Running the Project
+- Architecture
+- Components
+- Context
 
-In the output, you'll find options to open the app in a
+## Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Before running the project, make sure you have the following installed on your machine:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+- Node.js: Download and install [Node.js](https://nodejs.org/en).
+- Expo CLI: Install Expo CLI globally by running:
 
 ```bash
-npm run reset-project
+npm install -g expo-cli
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Git: Ensure Git is installed on your machine for cloning the repository.
 
-## Learn more
+### Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+Clone the repository:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/Norhanahmedsaber/SocialMediaApp
+```
 
-## Join the community
+### Install Dependencies:
 
-Join our community of developers creating universal apps.
+After cloning the repository, navigate to the project directory and install the necessary dependencies:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+cd <project-name>
+npm install
+```
+
+### Expo Setup:
+
+If you're using Expo, you can run the project directly in the Expo client. Follow these steps to get started:
+
+### Start Expo Development Server:
+
+```bash
+npx expo start --tunnel
+```
+
+This will open up the Expo developer tools in your browser.
+
+### Running on a Device:
+
+If you're on a mobile device, you can scan the QR code displayed in the Expo developer tools using the Expo Go app (available on iOS and Android).
+Running on an Emulator:
+
+If you prefer to run the app on an emulator, you can run:
+
+```bash
+expo start --android
+```
+
+(For Android emulators) or
+
+```bash
+expo start --ios
+```
+
+(For iOS simulators).
+
+### Project Structure
+
+Here’s an overview of the project structure:
+
+```bash
+/project-root
+├── /assets                 # Images, fonts, and other static assets
+│   └── /images
+    └── /fonts
+├── /components             # Reusable UI components like Button, AppGradient, etc.
+│   ├── Button.tsx
+│   └── AppGradient.tsx
+│   └── profile.tsx
+│   └── content.tsx
+│   └── icon.tsx
+│
+├── /context                # Global state management using Context API
+│   └── PostContext.tsx
+│   └── FontContext.tsx
+├──/app
+    └──index.tsx
+    └──_layout.tsx
+    └──(tabs)
+│       ├── _layout.tsx
+│       ├── Login.tsx
+│       ├── AddPost.tsx
+│       └── PostList.tsx
+├── tsconfig.json
+├── global.css               # Global styles and Tailwind configuration
+├── package.json             # Project dependencies and configuration
+└── README.md                # This file
+
+```
+
+### Running the Project
+
+- Start Expo Project: If you haven't already installed dependencies, do so by running:
+
+```bash
+npm install
+```
+
+### Run the Project: To start the app, simply use:
+
+```bash
+npx expo start --tunnel
+```
+
+This will launch the app in the Expo client
